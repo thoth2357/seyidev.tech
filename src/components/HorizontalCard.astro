@@ -26,7 +26,9 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
           {title}
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
-        <p class="py-1 text-1xl">{desc}</p>
+        <!-- <p class="py-1 text-1xl">{desc}</p> -->
+        <slot name="description" />
+
         <div class="card-actions justify-end">
           {
             tags &&

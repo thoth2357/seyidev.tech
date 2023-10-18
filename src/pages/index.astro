@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import { yearsInIndustry } from "../js/yearsInIndustry"
+import { yearsInIndustry } from "../js/yearsInIndustry";
 
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -24,7 +24,7 @@ const last_posts = posts.slice(0, 3);
     </div>
     <div class="mt-8">
       <a class="btn" href="https://twitter.com/o_oyewunmi" target="_blank"> Let's connect !</a>
-      <a href="/oluwaseyi-oyewunmi_CV" target="_blank" class="btn btn-outline ml-5">
+      <a href="/cv" target="" class="btn btn-outline ml-5">
         Resume Peek 🫣
       </a>
     </div>

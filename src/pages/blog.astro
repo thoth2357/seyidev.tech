@@ -130,7 +130,7 @@ const pathname = new URL(Astro.request.url).pathname;
 }
 
 .right-content {
-  flex: 1;
+  flex: 2;
   text-align: right;
 }
 
@@ -151,4 +151,24 @@ const pathname = new URL(Astro.request.url).pathname;
       gap: 50px;
     }
   }
+
+  @media (max-width: 768px) {
+  .intro {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .left-content {
+    order: 1; /* Change the order to 2 for smaller screens */
+  }
+
+  .right-content {
+    order: 2; /* Change the order to 1 for smaller screens */
+  }
+}
+
+
+
+
+
+
 </style>

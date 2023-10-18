@@ -4,48 +4,31 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
+
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-4xl w-full font-bold mb-5">Projects</div>
+    <text class="text-lg">
+      Step into the realm of my portfolio, where I unveil an assortment of categorized enchanting side projects I've conjured into existence.
+    </text>
+  </div>
+  
+  <div class="mt-10">
+    <!-- <div class="text-2xl w-full font-bold mb-5">Machine Learning</div> -->
   </div>
 
   <HorizontalCard
     title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    img="/projects/post_img.webp"
     url="#"
-    badge="NEW"
+    badge="FOSS",
+    tags = {[
+      "Python",
+      "Machine Learning",
+    ]}>
   />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
+  <div slot="description">
+    <p>Built with the Astro framework, this website is optimized for speed and search engines, designed with recruiters and tech enthusiasts in mind to efficiently access information about my skills, experience, and projects.</p>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
   <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 5"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
 </BaseLayout>

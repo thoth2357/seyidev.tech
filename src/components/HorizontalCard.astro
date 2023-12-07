@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const { title, img, desc, url, badge, tags, message, target = "_blank"} = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
@@ -60,8 +60,8 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         <div class="grow w-full">
           <h1 class="text-xl font-bold">
             {title} 
-            <rux-tooltip placement="right" message="Text">
-              <rux-button>🔒</rux-button>
+            <rux-tooltip placement="right-start" message={message} delay="600">
+              <rux-button2>🔒</rux-button2>
             </rux-tooltip>
             {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
           </h1>

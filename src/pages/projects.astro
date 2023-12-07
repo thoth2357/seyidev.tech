@@ -1,34 +1,106 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import Modal from "../components/Modal.astro";
 ---
 
-<BaseLayout title = "Projects" sideBarActiveItemID="projects">
+<BaseLayout title="Projects" sideBarActiveItemID="projects">
+	<div>
+		<div class="text-4xl w-full font-bold mb-5">Projects</div>
+		<text class="text-lg">
+			Step into the realm of my portfolio, where I unveil an assortment of categorized
+			enchanting side projects I've conjured into existence.
+		</text>
+	</div>
 
-  <div>
-    <div class="text-4xl w-full font-bold mb-5">Projects</div>
-    <text class="text-lg">
-      Step into the realm of my portfolio, where I unveil an assortment of categorized enchanting side projects I've conjured into existence.
-    </text>
-  </div>
-  
-  <div class="mt-10">
-    <!-- <div class="text-2xl w-full font-bold mb-5">Machine Learning</div> -->
-  </div>
+	<div class="mt-10">
+		<!-- <div class="text-2xl w-full font-bold mb-5"></div> -->
+	</div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/projects/post_img.webp"
-    url="#"
-    badge="FOSS",
-    tags = {[
-      "Python",
-      "Machine Learning",
-    ]}>
-  />
-  <div slot="description">
-    <p>Built with the Astro framework, this website is optimized for speed and search engines, designed with recruiters and tech enthusiasts in mind to efficiently access information about my skills, experience, and projects.</p>
-  </div>
+	<HorizontalCard
+		title="Portfolio Website"
+		img="/projects/portfolio.png"
+		url="https://seyidev.tech/"
+		badge="🕰️ 1701988658"
+		,
+		tags={["Web Development", "AstroJS"]}>
+		/>
+		<div slot="description">
+			<p>
+				This Portfolio Site Built with Astro during my freetime is optimized for speed and
+				search engines, designed with recruiters and tech enthusiasts in mind to efficiently
+				access information about my skills, experience, and projects.
+				<!-- <abbr
+					title="Inspiration was gotten from astro themes, looking at numerouse people portfolio and developing numerous portfolio pages"
+					>🤔</abbr
+				> -->
+			</p>
+		</div>
 
-  <div class="divider my-0"></div>
+		<div class="divider my-0"></div>
+	</HorizontalCard>
+
+	<HorizontalCard
+		title="AI Driven School Management System"
+		img="/projects/school-lms.png"
+		url="https://shccabeokuta.com/"
+		badge="🕰️ 1631054258"
+		,
+		tags={["Web Development", "Python", "Django", "Machine Learning"]}>
+		/>
+		<div slot="description">
+			<p>
+				This web app streamlines secondary school operations, offering an intuitive
+				interface for assessment management and dynamic data visualization for parents.
+				Integrating machine learning, it predicts student performance based on assignment
+				scores and tests, empowering students. Efficient Administrative and Management
+				systems enhance overall institution operations.
+			</p>
+		</div>
+
+		<div class="divider my-0"></div>
+	</HorizontalCard>
+
+	<HorizontalCard
+		title="ARQMail - Email Marketing Automation Tool"
+		img="/projects/arqmail.png"
+		url=""
+		message="Not publicly available"
+		badge="🕰️ 1649372400"
+		,
+		tags={["API Development", "Python", "FastAPI"]}>
+		/>
+		<div slot="description">
+			<p>
+				Built the Backend of the application which empowers users to effortlessly send
+				emails to specified contact lists using customizable templates. It supports flexible
+				SMTP/proxy settings, allowing users to tailor their email delivery preferences.
+				Additionally, the implementation of innovative subscription plans ensures efficient
+				management of email quotas for varying communication needs.
+			</p>
+		</div>
+
+		<div class="divider my-0"></div>
+	</HorizontalCard>
+
+	<HorizontalCard
+		title="StaArchive - Archive Application"
+		img="/projects/staarchive.png"
+		url="https://staarchive.com.ng/"
+		badge="🕰️ 1688770800"
+		,
+		tags={["Web Development", "Python", "Django", "AWS"]}>
+		/>
+		<div slot="description">
+			<p>
+				Empowering academic collaboration, this Django web app lets authorized university
+				users upload and access past questions, projects, and textbooks. With features like
+				secure login, role-based access control, signal-driven reports, and automatic
+				thumbnail generation, the app promotes knowledge exchange and streamlines resource
+				management through robust performance and detailed log management.
+			</p>
+		</div>
+
+		<div class="divider my-0"></div>
+	</HorizontalCard>
 </BaseLayout>

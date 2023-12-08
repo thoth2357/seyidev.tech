@@ -18,6 +18,7 @@
     "@astrojs/tailwind": "^5.0.0",
     "@astrouxds/astro-web-components": "^7.19.1",
     "astro": "^3.2.3",
+    "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.0",
     "daisyui": "^3.2.1",
     "dayjs": "^1.11.9",

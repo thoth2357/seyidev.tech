@@ -8,7 +8,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
   class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
 >
   {url ? (
-    <a href={url} target={target}> 
+    <a href={url} target={target} rel="noopener noreferrer"> 
       <div class="hero-content flex-col md:flex-row">
         {
           img && (
@@ -25,7 +25,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         <div class="grow w-full">
           <h1 class="text-xl font-bold">
             {title}
-            {badge && <div class="badge badge-neutral mx-2">{badge}</div>}
+            {badge && <div class="badge badge-neutral mx-2">🕰️ {badge}</div>}
           </h1>
           <!-- <p class="py-1 text-1xl">{desc}</p> -->
           <slot name="description" />
@@ -63,7 +63,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
             <rux-tooltip placement="right-start" message={message} delay="600">
               <rux-button2>🔒</rux-button2>
             </rux-tooltip>
-            {badge && <div class="badge badge-neutral mx-2">{badge}</div>}
+            {badge && <div class="badge badge-neutral mx-2">🕰️ {badge}</div>}
           </h1>
           <!-- <p class="py-1 text-1xl">{desc}</p> -->
           <slot name="description" />

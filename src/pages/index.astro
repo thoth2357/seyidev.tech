@@ -4,67 +4,173 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import { yearsInIndustry } from "../js/yearsInIndustry";
 
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Greetings Earthlings 🧙🏿‍♂️ </div>
-    <div class="text-5xl font-bold">I'm Oyewunmi Oluwaseyi </div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Conjurer of digital dreams</div>
-    <div class="py-2">
-      <text class="text-lg">
-        I'm a software sorcerer, skilled in the esoteric disciplines of backend engineering, DevOps, and machine learning. 
-        I have {yearsInIndustry} years of unshakable attention to the field, 
-        and I use the power of coding to summon creative solutions.
-      </text>
-    </div>
-    <div class="mt-8">
-      <a class="btn" href="https://www.linkedin.com/in/oluwaseyi-oyewunmi-b486ab17b/" target="_blank"> Let's connect !</a>
-      <a href="/projects" target="" class="btn ml-5">
-        View Projects 💼
-      </a>
-      <a href="/cv" target="" class="btn ml-5">
-        Resume Peek 📑
-      </a>
-      
-    </div>
-  </div>
+	<div class="hidden lg:block absolute top-0 right-0 h-10 w-120 mt-6">
+		<div class="dropdown">
+			<div tabindex="0" role="button" class="btn m-1">
+				Theme
+				<select class="select select-bordered select-sm" data-choose-theme>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="light"
+						>Light</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="dark"
+						>Dark</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="cupcake"
+						>Cupcake</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="bumblebee"
+						>Bumblebee</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="emerald"
+						>Emerald</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="corporate"
+						>Corporate</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="synthwave"
+						>Synthwave</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="retro"
+						>Retro</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="cyberpunk"
+						>Cyberpunk</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="valentine"
+						>Valentine</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="halloween"
+						>Halloween</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="garden"
+						>Garden</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="forest"
+						>Forest</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="aqua"
+						>Aqua</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="lofi"
+						>Lofi</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="pastel"
+						>Pastel</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="fantasy"
+						>Fantasy</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="wireframe"
+						>Wireframe</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="black"
+						>Black</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="luxury"
+						>Luxury</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="dracula"
+						>Dracula</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="cmyk"
+						>CMYK</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="autumn"
+						>Autumn</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="business"
+						>Business</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="acid"
+						>Acid</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="lemonade"
+						>Lemonade</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="night"
+						>Night</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="coffee"
+						>Coffee</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="winter"
+						>Winter</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="dim"
+						>Dim</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="nord"
+						>Nord</option
+					>
+					<option class="btn btn-sm btn-block btn-ghost justify-start" value="sunset"
+						>Sunset</option
+					>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="pb-12 mt-5">
+		<div class="text-xl py-1">Greetings Earthlings 🧙🏿‍♂️</div>
+		<div class="text-5xl font-bold">I'm Oyewunmi Oluwaseyi</div>
+		<div class="text-3xl py-3 font-bold">Software Engineer and Conjurer of digital dreams</div>
+		<div class="py-2">
+			<text class="text-lg">
+				I'm a software sorcerer, skilled in the esoteric disciplines of backend engineering,
+				DevOps, and machine learning. I have {yearsInIndustry} years of unshakable attention
+				to the field, and I use the power of coding to summon creative solutions.
+			</text>
+		</div>
+		<div class="mt-8">
+			<a
+				class="btn"
+				href="https://www.linkedin.com/in/oluwaseyi-oyewunmi-b486ab17b/"
+				target="_blank">
+				Let's connect !</a
+			>
+			<a href="/projects" target="" class="btn ml-5"> View Projects 💼</a>
+			<a href="/cv" target="" class="btn ml-5"> Resume Peek 📑</a>
+		</div>
+	</div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
+	<div>
+		<div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+	</div>
 
-  <!-- #TODO : USE API TO GET PROJECTS -->
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/blogs/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
+	<!-- #TODO : USE API TO GET PROJECTS -->
+	<HorizontalCard
+		title="Demo Project 1"
+		img="/blogs/post_img.webp"
+		desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		url="#"
+		badge="NEW"
+	/>
+	<div class="divider my-0"></div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
+	<div>
+		<div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+	</div>
 
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+	{
+		last_posts.map((post) => (
+			<>
+				<HorizontalCard
+					title={post.data.title}
+					img={post.data.heroImage}
+					desc={post.data.description}
+					url={"/blog/" + post.slug}
+					target="_self"
+					badge={post.data.badge}
+				/>
+				<div class="divider my-0" />
+			</>
+		))
+	}
 </BaseLayout>

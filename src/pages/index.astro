@@ -141,36 +141,154 @@ const last_posts = posts.slice(0, 3);
 	</div>
 
 	<div>
-		<div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-	</div>
-
-	<!-- #TODO : USE API TO GET PROJECTS -->
-	<HorizontalCard
-		title="Demo Project 1"
-		img="/blogs/post_img.webp"
-		desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-		url="#"
-		badge="NEW"
-	/>
-	<div class="divider my-0"></div>
-
-	<div>
-		<div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-	</div>
-
-	{
-		last_posts.map((post) => (
-			<>
-				<HorizontalCard
-					title={post.data.title}
-					img={post.data.heroImage}
-					desc={post.data.description}
-					url={"/blog/" + post.slug}
-					target="_self"
-					badge={post.data.badge}
+		<div>
+			<div id="activityTitle" class="text-3xl w-full font-bold mb-2">
+				Coding Activity {"👨🏾‍💻"}
+			</div>
+		</div>
+		<div class="flex">
+			<div class="flex space-x-2">
+				<button id="prevActivity" class="text-blue-500 hidden"
+					><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+						><path
+							d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z"
+						></path></svg
+					></button
+				>
+			</div>
+			<figure id="activity1" class="visible">
+				<embed
+					src="https://wakatime.com/share/@oluwseyi/8041f65a-da93-4e9a-bdec-a008d546f428.svg"
 				/>
-				<div class="divider my-0" />
-			</>
-		))
-	}
+			</figure>
+
+			<figure id="activity3" class="hidden last-activity">
+				<iframe
+					src="https://leetcard.jacoblin.cool/thoth2357?width=500&theme=light&font=Roboto&ext=heatmap"
+				></iframe>
+			</figure>
+			<figure id="activity2" class="w-[700px] relative rounded-md drop-shadow-lg hidden">
+				<div id="embed-iframe"></div>
+				<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3NeDFOlOOmHaEtRxrBs344?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+			</figure>
+			<div class="flex space-x-2">
+				<button id="nextActivity" class="text-blue-500"
+					><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+						><path
+							d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
+						></path></svg
+					></button
+				>
+			</div>
+		</div>
+	</div>
+
+<div class="divider my-0"></div>
+
+<div>
+	<div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog ✏️</div>
+</div>
+
+{
+	last_posts.map((post) => (
+		<>
+			<HorizontalCard
+				title={post.data.title}
+				img={post.data.heroImage}
+				desc={post.data.description}
+				url={"/blog/" + post.slug}
+				target="_self"
+				badge={post.data.badge}
+			/>
+			<div class="divider my-0" />
+		</>
+	))
+}
 </BaseLayout>
+
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+
+<script>
+	window.onSpotifyIframeApiReady = (IFrameAPI) => {
+		const element = document.getElementById("embed-iframe");
+		const options = {
+			width: "100%",
+			height: "152",
+			uri: "spotify:playlist:3NeDFOlOOmHaEtRxrBs344",
+		};
+		const callback = (EmbedController) => {};
+		IFrameAPI.createController(element, options, callback);
+	};
+	document.addEventListener("DOMContentLoaded", function () {
+		const prevButton = document.getElementById("prevActivity");
+		const nextButton = document.getElementById("nextActivity");
+		const activityTitle = document.getElementById("activityTitle");
+		const activity1 = document.getElementById("activity1");
+		const activity2 = document.getElementById("activity2");
+		const activity3 = document.getElementById("activity3");
+
+		nextButton.addEventListener("click", function () {
+			if (activity1.classList.contains("visible")) {
+				activity1.classList.remove("visible");
+				activity1.classList.add("hidden");
+
+				activity2.classList.remove("hidden");
+				activity2.classList.add("visible");
+
+				prevButton.classList.remove("hidden");
+
+				// Check if the last activity is visible, hide the next button
+				if (activity2.classList.contains("last-activity")) {
+					nextButton.classList.add("hidden");
+				}
+
+				// Update Today's Activity based on the currently visible figure
+				activityTitle.textContent = "Music Activity 🎧";
+			} else if (activity2.classList.contains("visible")) {
+				activity2.classList.remove("visible");
+				activity2.classList.add("hidden");
+
+				activity3.classList.remove("hidden");
+				activity3.classList.add("visible");
+
+				// Check if the last activity is visible, hide the next button
+				if (activity3.classList.contains("last-activity")) {
+					nextButton.classList.add("hidden");
+				}
+
+				// Update Today's Activity based on the currently visible figure
+				activityTitle.textContent = "LeetCode Activity 🧠";
+			}
+		});
+
+		prevButton.addEventListener("click", function () {
+			if (activity2.classList.contains("visible")) {
+				activity2.classList.remove("visible");
+				activity2.classList.add("hidden");
+
+				activity1.classList.remove("hidden");
+				activity1.classList.add("visible");
+
+				prevButton.classList.add("hidden");
+				nextButton.classList.remove("hidden");
+
+				// Update Today's Activity based on the currently visible figure
+				activityTitle.textContent = "Coding Activity 👨🏾‍💻";
+			} else if (activity3.classList.contains("visible")) {
+				activity3.classList.remove("visible");
+				activity3.classList.add("hidden");
+
+				activity2.classList.remove("hidden");
+				activity2.classList.add("visible");
+
+				// Check if the last activity is visible, hide the next button
+				if (activity2.classList.contains("last-activity")) {
+					nextButton.classList.add("hidden");
+				}
+
+				// Update Today's Activity based on the currently visible figure
+				activityTitle.textContent = "Music Activity 🎧";
+			}
+		});
+	});
+</script>

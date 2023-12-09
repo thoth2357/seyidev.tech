@@ -17,6 +17,7 @@
     "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@astrouxds/astro-web-components": "^7.19.1",
+    "@swup/astro": "^1.4.0",
     "astro": "^3.2.3",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.0",

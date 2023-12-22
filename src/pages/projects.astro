@@ -12,16 +12,25 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		</text>
 	</div>
 
-	<div class="mt-10">
+	<div class="grid grid-cols-1 justify-items-center mt-10 ">
+		<div role="tablist" class="tabs tabs-boxed ">
+			<a role="tab" class="tab tab-active" data-tag="ML/AI 🤖">ML/AI 🤖</a>
+			<a role="tab" class="tab" data-tag="Web Applications 🌐">Web Applications 🌐</a>
+			<a role="tab" class="tab" data-tag="Desktop Applications 🖥️">Desktop Applications 🖥️</a>
+			<a role="tab" class="tab" data-tag="Android Applications 📱">Android Applications 📱</a>
+		</div>
 		<!-- <div class="text-2xl w-full font-bold mb-5"></div> -->
 	</div>
+
+
+
 
 	<HorizontalCard
 		title="Portfolio Website"
 		img="/projects/portfolio.png"
 		url="https://seyidev.tech/"
-		badge="1701988658"
-		,
+		badge="1701988658",		
+		datatags={["Web Applications 🌐"]},
 		tags={["Web Development", "AstroJS", "TailwindCSS"]}>
 		/>
 		<div slot="description">
@@ -43,8 +52,8 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		title="AI Driven School Management System"
 		img="/projects/school-lms.png"
 		url="https://shccabeokuta.com/"
-		badge="1631054258"
-		,
+		badge="1631054258",
+		datatags={["Web Applications 🌐"]},
 		tags={["Web Development", "Python", "Django", "Bootstrap", "Machine Learning"]}>
 		/>
 		<div slot="description">
@@ -64,9 +73,9 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		title="ARQMail - Email Marketing Automation Tool"
 		img="/projects/arqmail.png"
 		url=""
-		message="Not publicly available"
-		badge="1649372400"
-		,
+		message="Project Not publicly available"
+		badge="1649372400",
+		datatags={[]},
 		tags={["API Development", "Python", "FastAPI", "👥 Team"]}>
 		/>
 		<div slot="description">
@@ -86,8 +95,8 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		title="StaArchive - Archive Application"
 		img="/projects/staarchive.png"
 		url="https://staarchive.com.ng/"
-		badge="1688770800"
-		,
+		badge="1688770800",
+		datatags={[]},
 		tags={["Web Development", "Python", "Django", "Bootstrap", "AWS"]}>
 		/>
 		<div slot="description">
@@ -107,8 +116,8 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		title="Ki67 Counter"
 		img="/projects/ki67.png"
 		url="https://ki67.app/"
-		badge="1688770800"
-		,
+		badge="1688770800",
+		datatags={[]},
 		tags={["Api Development", "Python", "FastAPI", "MATLAB", "👥 Team"]}>
 		/>
 		<div slot="description">
@@ -129,8 +138,8 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		title="Roulette Prediction Software With AI"
 		img="/projects/rouletteaid.png"
 		url="https://rouletteaid.com/our-software/"
-		badge="1675810800"
-		,
+		badge="1675810800",
+		datatags={[]},
 		tags={["Desktop Development", "Machine Learning", "Python", "PySide6", "👥 Team"]}>
 		/>
 		<div slot="description">
@@ -151,8 +160,8 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		title="Skin Lesion Segmentation"
 		img="/projects/skin-lesion.png"
 		url="https://github.com/thoth2357/skin-Lesion-Segmentation/tree/master/Matlab-Version"
-		badge="1675810800"
-		,
+		badge="1675810800",
+		datatags={[]},
 		tags={["Desktop Development", "Machine Learning", "MATLAB", "PySide6", "👥 Team"]}>
 		/>
 		<div slot="description">
@@ -174,8 +183,8 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		title="Job Board Application"
 		img="/projects/skin-lesion.png"
 		url="https://github.com/thoth2357/skin-Lesion-Segmentation/tree/master/Matlab-Version"
-		badge="1675810800"
-		,
+		badge="1675810800",
+		datatags={[]},
 		tags={["Web Development", "Python", "Django", "Bootstrap", "Redis"]}>
 		/>
 		<div slot="description">
@@ -194,3 +203,53 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 		<div class="divider my-0"></div>
 	</HorizontalCard>
 </BaseLayout>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const cardsContainer = document.getElementById('cards-container');
+
+	// Hide all cards initially
+	const cards = document.querySelectorAll('.horizontal-card');
+	cards.forEach(card => {
+		card.style.display = 'none';
+	});
+
+	// Show cards corresponding to the initial active tab
+	const initialActiveTab = document.querySelector('.tab-active');
+	if (initialActiveTab) {
+		const initialTag = initialActiveTab.getAttribute('data-tag');
+		const initialTagCards = document.querySelectorAll(`.horizontal-card[data-tags*="${initialTag}"]`);
+		initialTagCards.forEach(card => {
+		card.style.display = 'block';
+		});
+	}
+    tabs.forEach(tab => {
+		tab.addEventListener('click', function () {
+			// Remove active class from all tabs
+			tabs.forEach(t => t.classList.remove('tab-active'));
+			
+			// Add active class to the clicked tab
+			this.classList.add('tab-active');
+
+			// Get the clicked tab's data-tag attribute value
+			const selectedTag = this.getAttribute('data-tag');
+			console.log(selectedTag);
+
+			// Show/hide cards based on the selected tag
+			const cards = document.querySelectorAll('.horizontal-card');
+			// console.log(cards);
+
+			cards.forEach(card => {
+				const cardTags = card.getAttribute('data-tags').split(',');
+				console.log(card, cardTags);
+				if (cardTags.includes(selectedTag)) {
+					card.style.display = 'block';
+				} else {
+					card.style.display = 'none';
+				}
+				});
+		});
+    });
+});
+</script>

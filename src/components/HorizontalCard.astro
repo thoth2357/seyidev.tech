@@ -1,11 +1,12 @@
 ---
-const { title, img, desc, url, badge, tags, message, target = "_blank"} = Astro.props;
+const { title, img, desc, url, badge, tags, message, datatags, target = "_blank"} = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
 <div
-  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+  class="horizontal-card rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+  data-tags={datatags}
 >
   {url ? (
     <a href={url} target={target} rel="noopener noreferrer"> 
@@ -81,5 +82,6 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         </div>
       </div>
     )}
+  <hr>
 </div>
 

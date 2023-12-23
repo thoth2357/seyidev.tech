@@ -25,14 +25,22 @@ const last_posts = posts.slice(0, 3);
 			</text>
 		</div>
 		<div class="flex flex-wrap mt-8">
-			<a
-				class="btn ml-5"
+			<div class="pb-2">
+				<a
+				class="btn btn-outline btn-secondary ml-5"
 				href="https://www.linkedin.com/in/oluwaseyi-oyewunmi-b486ab17b/"
 				target="_blank">
-				Let's connect !</a
-			>
-			<a href="/projects" target="" class="btn ml-5"> View Projects 💼</a>
-			<a href="/cv" target="" class="btn ml-5"> Resume Peek 📑</a>
+				Let's connect !</a>
+			</div>
+			<div class="pb-2">
+				<a href="/projects" target="" class="btn ml-5"> View Projects 💼</a>
+			</div>
+			<div class="pb-2">
+				<a href="/cv" target="" class="btn ml-5"> Resume Peek 📑</a>
+			</div>
+			<div class="pb-2">
+				<a href="/blog" target="" class="btn ml-5"> Read Blog ✍🏾</a>
+			</div>
 		</div>
 	</div>
 
@@ -45,12 +53,10 @@ const last_posts = posts.slice(0, 3);
 		<div class="flex">
 			<div class="flex space-x-2">
 				<button id="prevActivity" class="text-blue-500 hidden"
-					><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-						><path
-							d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z"
-						></path></svg
-					></button
-				>
+					><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+					<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z" clip-rule="evenodd" />
+					</svg>
+				</button>
 			</div>
 			<figure id="activity1" class="visible">
 				<a href="https://wakatime.com"><img src="https://wakatime.com/share/@oluwseyi/503325e6-be92-4bab-a002-26c359d6e36c.png" /></a>
@@ -63,17 +69,18 @@ const last_posts = posts.slice(0, 3);
 			
 			<figure id="activity3" class="hidden last-activity">
 				<iframe
-					src="https://leetcard.jacoblin.cool/thoth2357?width=500&theme=light&font=Roboto&ext=heatmap"
+					src="https://leetcard.jacoblin.cool/thoth2357?width=500&theme=dark&font=milonga&border=0"
+					width="250"
+					height="100"
 				></iframe>
 			</figure>
 			
 			<div class="flex space-x-2">
 				<button id="nextActivity" class="text-blue-500"
-					><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-						><path
-							d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"
-						></path></svg
-					></button
+					><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+						<path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clip-rule="evenodd" />
+					</svg>
+				</button
 				>
 			</div>
 		</div>
@@ -82,7 +89,7 @@ const last_posts = posts.slice(0, 3);
 <div class="divider my-0"></div>
 
 <div>
-	<div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog ✏️</div>
+	<div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog ✍🏾</div>
 </div>
 
 {

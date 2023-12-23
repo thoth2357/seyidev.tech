@@ -34,6 +34,111 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSideba
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center">
           <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
+            <div class="hidden lg:block absolute top-0 right-0 h-10 w-120 mt-6">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn m-1">
+                  Theme
+                  <select class="select select-bordered select-sm" data-choose-theme>
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="light"
+                      >Light</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="dark"
+                      >Dark</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="cupcake"
+                      >Cupcake</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="bumblebee"
+                      >Bumblebee</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="emerald"
+                      >Emerald</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="corporate"
+                      >Corporate</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="synthwave"
+                      >Synthwave</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="retro"
+                      >Retro</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="cyberpunk"
+                      >Cyberpunk</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="valentine"
+                      >Valentine</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="halloween"
+                      >Halloween</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="garden"
+                      >Garden</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="forest"
+                      >Forest</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="aqua"
+                      >Aqua</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="lofi"
+                      >Lofi</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="pastel"
+                      >Pastel</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="fantasy"
+                      >Fantasy</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="wireframe"
+                      >Wireframe</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="black"
+                      >Black</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="luxury"
+                      >Luxury</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="dracula"
+                      >Dracula</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="cmyk"
+                      >CMYK</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="autumn"
+                      >Autumn</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="business"
+                      >Business</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="acid"
+                      >Acid</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="lemonade"
+                      >Lemonade</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="night"
+                      >Night</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="coffee"
+                      >Coffee</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="winter"
+                      >Winter</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="dim"
+                      >Dim</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="nord"
+                      >Nord</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="sunset"
+                      >Sunset</option
+                    >
+                  </select>
+                </div>
+              </div>
+            </div>
             <slot />
           </main>
         </div>

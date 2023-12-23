@@ -16,7 +16,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSideba
     <script is:inline>
       // ☝️ This script prevent the FART effect.
       if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "light");
+        document.documentElement.setAttribute("data-theme", "dark");
       } else
         document.documentElement.setAttribute(
           "data-theme",
@@ -39,11 +39,11 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSideba
                 <div tabindex="0" role="button" class="btn m-1">
                   Theme
                   <select class="select select-bordered select-sm" data-choose-theme>
-                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="light"
-                      >Light</option
-                    >
                     <option class="btn btn-sm btn-block btn-ghost justify-start" value="dark"
                       >Dark</option
+                    >
+                    <option class="btn btn-sm btn-block btn-ghost justify-start" value="light"
+                      >Light</option
                     >
                     <option class="btn btn-sm btn-block btn-ghost justify-start" value="cupcake"
                       >Cupcake</option

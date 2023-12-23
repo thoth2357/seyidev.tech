@@ -4,13 +4,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-<div class="mb-5 flex items-center justify-between">
+<div class="mb-5 flex items-center">
   <div class="text-3xl font-bold" id="greeting"></div>
-  <div>
-    <a href="/Oluwaseyi_CV.pdf" target="" class="btn btn-outline ml-1">
-      Get Complete Resume 📖
-    </a>
-  </div>
 </div>
 
   
@@ -95,6 +90,16 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>Skill Name</li>
     <li>Skill Name</li>
   </ul>
+  <div class="flex flex-row-reverse pt-10">
+    <div>
+      <a href="/Oluwaseyi_CV.pdf" target="" class="btn btn-outline ml-1">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+      </svg>
+        Get Complete Resume 📖
+      </a>
+    </div>
+  </div>
 </BaseLayout>
 
 <script>

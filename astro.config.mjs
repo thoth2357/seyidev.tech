@@ -17,7 +17,7 @@ export default defineConfig({
 		swup({
 			theme: "fade",
 			animationClass: "transition-",
-			cache: false,
+			cache: true,
 			preload: true,
 			accessibility: true,
 			forms: false,

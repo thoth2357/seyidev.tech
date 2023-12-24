@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 import robotsTxt from "astro-robots-txt";
 import swup from "@swup/astro";
+import partytown from "@astrojs/partytown";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,6 +34,11 @@ export default defineConfig({
 			debug: false,
 			loadOnIdle: true,
 			globalInstance: false,
+		}),
+		partytown({
+			config: {
+				forward: ["dataLayer.push"],
+			},
 		}),
 	],
 });

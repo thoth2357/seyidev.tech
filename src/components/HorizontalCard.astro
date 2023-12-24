@@ -26,7 +26,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         <div class="grow w-full">
           <h1 class="text-xl font-bold">
             {title}
-            {badge && <div class="badge badge-neutral mx-2">🕰️ {badge}</div>}
+            {badge && <div class="badge badge-primary badge-outline mx-2">🕰️ {badge}</div>}
           </h1>
           <!-- <p class="py-1 text-1xl">{desc}</p> -->
           <slot name="description" />
@@ -45,43 +45,54 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
       </div>
     </a>
     ) : (
-      <div class="hero-content flex-col md:flex-row">
-        {
-          img && (
-            <Image
-              src={img}
-              width={750}
-              height={422}
-              format="webp"
-              alt={title}
-              class="max-w-full md:max-w-[13rem] rounded-lg"
-            />
-          )
-        }
-        <div class="grow w-full">
-          <h1 class="text-xl font-bold">
-            {title} 
-            <rux-tooltip placement="right-start" message={message} delay="600">
-              <rux-button2>🔒</rux-button2>
-            </rux-tooltip>
-            {badge && <div class="badge badge-neutral mx-2">🕰️ {badge}</div>}
-          </h1>
-          <!-- <p class="py-1 text-1xl">{desc}</p> -->
-          <slot name="description" />
-
-          <div class="card-actions justify-end">
+      <label class="swap swap-flip">
+    
+        <!-- this hidden checkbox controls the state -->
+        <input type="checkbox" />
+        
+        <div class="swap-off">
+          <div class="hero-content flex-col md:flex-row">
             {
-              tags &&
-                tags.map((tag) => (
-                  <a class="badge badge-outline">
-                    {tag}
-                  </a>
-                ))
+              img && (
+                <Image
+                  src={img}
+                  width={750}
+                  height={422}
+                  format="webp"
+                  alt={title}
+                  class="max-w-full md:max-w-[13rem] rounded-lg"
+                />
+              )
             }
-          </div>
+            <div class="grow w-full">
+              <h1 class="text-xl font-bold">
+                {title} 
+                <rux-tooltip placement="right-start" message={message} delay="600">
+                  <rux-button2>🔒</rux-button2>
+                </rux-tooltip>
+                {badge && <div class="badge badge-neutral mx-2">🕰️ {badge}</div>}
+              </h1>
+              <slot name="description" />
+
+              <div class="card-actions justify-end">
+                {
+                  tags &&
+                    tags.map((tag) => (
+                      <a class="badge badge-outline">
+                        {tag}
+                      </a>
+                    ))
+                }
+              </div>
+            </div>
+          </div>  
         </div>
-      </div>
+        <div class="swap-on flex items-center justify-center">
+            <div class="p-4 py-30">
+              Ouch!, It seems you missed the 🔒.Please Go Back And Leave mouse on The 🔒 ToolTip for more info.
+            </div>
+        </div>
+      </label>
     )}
-  <hr>
 </div>
 

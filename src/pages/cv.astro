@@ -4,17 +4,6 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-<div class="mb-5 flex items-center">
-  <div class="text-3xl font-bold" id="greeting"></div>
-</div>
-
-  
-
-  <div class="mb-10 text-justify">
-    I'm Oyewunmi Oluwaseyi, a software professional from Nigeria with over six years of experience developing software solutions.
-    With a deep passion for machine learning and AI, I craft intricate digital solutions using multiple technologies. Beyond coding, I seek wisdom from diverse sources, translating it into code. 
-    My journey spans DevOps, system administration, and information security. In this odyssey, I embrace my role as a digital enchanter, weaving Python spells that merge magic with technology.
-  </div>
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Education 🏫</div>
@@ -101,9 +90,3 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     </div>
   </div>
 </BaseLayout>
-
-<script>
-  import { greeting } from "../js/greeting";
-  const greetingContainer = document.getElementById("greeting");
-  greetingContainer.innerText = greeting();
-</script>

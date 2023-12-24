@@ -14,14 +14,12 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
 
 	<div class="pb-12 mt-5">
-		<div class="text-xl py-1">Greetings Earthlings 🧙🏿‍♂️</div>
+		<div class="text-xl py-1"><div id="greeting"></div></div>
 		<div class="text-5xl font-bold">I'm Oluwaseyi (Ekpere) Oyewunmi</div>
 		<div class="text-3xl py-3 font-bold">Software Engineer and Conjurer of digital dreams</div>
 		<div class="py-2">
 			<text class="text-lg">
-				I'm a software sorcerer, skilled in the esoteric disciplines of backend engineering,
-				DevOps, and machine learning. I have {yearsInIndustry} years of unshakable attention
-				to the field, and I use the power of coding to summon creative solutions.
+				I'm a Generalist software professional from Nigeria with over {yearsInIndustry} years of experience developing software solutions. With a deep passion for machine learning and AI, I craft intricate digital solutions using multiple technologies. Beyond coding, I seek wisdom from diverse sources, translating it into code. My journey spans Backend Engineering, System administration,Desktop Develoment and DevOps. 
 			</text>
 		</div>
 		<div class="flex flex-wrap mt-8">
@@ -112,6 +110,10 @@ const last_posts = posts.slice(0, 3);
 <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 
 <script>
+	import { greeting } from "../js/greeting";
+	const greetingContainer = document.getElementById("greeting");
+	greetingContainer.innerText = greeting();
+
 	window.onSpotifyIframeApiReady = (IFrameAPI) => {
 		const element = document.getElementById("embed-iframe");
 		const options = {

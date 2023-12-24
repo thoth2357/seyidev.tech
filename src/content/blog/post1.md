@@ -1,11 +1,11 @@
 ---
-title: "Demo Post 1"
+title: "Implementing 2FA using FastAPI and Authenticator App"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 pubDate: "Sep 12 2022"
 updatedDate: "Sep 14 2022"
-heroImage: "/blogs/post_img.webp"
-badge: "Demo badge"
-tags: ["rust","tokio"]
+heroImage: "/blogs/test3.webp"
+badge: "Knowledge"
+tags: ["FastApi"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
